@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo</title>
+    <script src="dist.js" type="module"></script>
+    <script type="module">
+        import pageEmissionsEstimate from './dist.js';
+
+        pageEmissionsEstimate({ interval: 5000 });
+    </script>
+</head>
+<body>
+    <h1>Welcome to the Demo</h1>
+
+    <div style="height: 150vh;">
+    </div>
+
+    <h2>External image</h2>
+    <img loading="lazy" src="//cdn.sanity.io/images/twtrbzfo/production/01fb918083079acdc50790dc485eea6c101bf34c-1676x1676.jpg?auto=format" alt="">
+    
+    <div style="height: 350vh;">
+    </div>
+    
+    <h2>Local image</h2>
+    <img loading="lazy" src="demo/mountain.jpg" alt="">
+    
+</body>
+</html>

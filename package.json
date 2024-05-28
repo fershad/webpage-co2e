@@ -1,0 +1,20 @@
+{
+  "name": "webpage-co2e",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "build": "esbuild index.js --bundle --minify --sourcemap --format=esm --tree-shaking=true --target=chrome120,firefox120,safari13 --outfile=dist.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@tgwf/co2": "^0.15.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.21.4"
+  }
+}
