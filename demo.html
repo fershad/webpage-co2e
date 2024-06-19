@@ -7,23 +7,41 @@
     <script type="module">
         import pageEmissionsEstimate from './index.js';
 
-        pageEmissionsEstimate({ interval: 5000 });
+        pageEmissionsEstimate({ updateId: ['co2-emissions']});
     </script>
 </head>
 <body>
     <h1>Welcome to the Demo</h1>
+    <p>This page is a demonstration of how the <a href="https://developer.mozilla.org/en-US/docs/web/api/performanceresourcetiming">Performance Resource Timing API</a> can be used with <a href="https://github.com/thegreenwebfoundation/co2.js/tree/main">CO2.js</a> on a web page.</p>
+    <p>This demo page includes one image from an external source, a local image that is also lazy loaded, and a Youtube embed.</p>
+    <p>At present, a script runs when the page is loaded (window state is <code>load</code>). This script uses the Performance Resource Timing API to collect information about the data transferred when the pay was loaded. This information is then fed into CO2.js which uses it to provide a carbon emissions estimate based on the Sustainable Web Design Model version 3.</p>
+    <p><i>At the moment this, demonstration does not make any adjustments to grid intensity based on server location or user location, nor does it make any checks to see if the web page is hosted on a Green web host. This should be noted as changes to these variables would affect the final carbon emissions estimate produced on this page.</i></p>
+
+    <h2>CO2 Emissions Estimate</h2>
+    <pre style="background-color: lightgray; display: flex; align-items: center; gap: 1.25rem;">
+        <code style="margin: 0;line-height: 2.25;">
+            The estimated carbon emissions for this page are: <span id="co2-emissions">Calculating...</span> grams CO2e.
+            Open your browsers console to see more information.
+        </code>
+    </pre>
 
     <div style="height: 150vh;">
     </div>
 
     <h2>External image</h2>
-    <img loading="lazy" src="//cdn.sanity.io/images/twtrbzfo/production/01fb918083079acdc50790dc485eea6c101bf34c-1676x1676.jpg?auto=format" alt="">
+    <img src="//cdn.sanity.io/images/twtrbzfo/production/01fb918083079acdc50790dc485eea6c101bf34c-1676x1676.jpg?auto=format" alt="">
     
     <div style="height: 350vh;">
     </div>
     
     <h2>Local image</h2>
-    <img loading="lazy" src="demo/mountain.jpg" alt="">
+    <img loading="lazy" src="demo/mountain.jpg" alt="" width="100%">
+
+    <div style="height: 50vh;">
+    </div>
+
+    <h2>Youtube Embed</h2>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=Djr4akvkahZyZgmY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     
 </body>
 </html>

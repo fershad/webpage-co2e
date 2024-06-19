@@ -12,15 +12,28 @@ const estimateEmissions = (pageWeight) => {
     return emissions;
 }
 
-export default async function pageEmissionsEstimate(options = { interval: 5000 }) {
-    const { interval } = options;
+export default async function pageEmissionsEstimate(options = {}) {
+    const { updateId } = options;
     console.log('Page emissions estimate');
     let pageWeight = 0;
-    setInterval(() => {
+
+    window.addEventListener("load", function() {
         pageWeight = getPageWeight();
         console.log('Page weight:', pageWeight);
         const emissions = estimateEmissions(pageWeight);
         console.log('Emissions:', emissions);
-    }, interval);
+
+        // Optional, update the DOM with the emissions results
+        updateId.map((id) => {
+            const element = document.getElementById(id);
+            element.innerHTML = emissions.co2;
+        });
+    }, false);
+    // setInterval(() => {
+    //     pageWeight = getPageWeight();
+    //     console.log('Page weight:', pageWeight);
+    //     const emissions = estimateEmissions(pageWeight);
+    //     console.log('Emissions:', emissions);
+    // }, interval);
 
 }
