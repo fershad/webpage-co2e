@@ -13,8 +13,5 @@
   "description": "",
   "dependencies": {
     "@tgwf/co2": "^0.15.0"
-  },
-  "devDependencies": {
-    "esbuild": "0.21.4"
   }
 }
