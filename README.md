@@ -1,4 +1,4 @@
-Estimating Web Page CO2e with Performance Resource Timing API & CO2.js
+# Estimating Web Page CO2e with Performance Resource Timing API & CO2.js
 
 This page is a demonstration of how the [Performance Resource Timing API](https://developer.mozilla.org/en-US/docs/web/api/performanceresourcetiming) can be used with [CO2.js](https://github.com/thegreenwebfoundation/co2.js/tree/main) on a web page.
 
