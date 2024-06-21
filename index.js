@@ -28,6 +28,8 @@ export default async function pageEmissionsEstimate(options = {}) {
             const element = document.getElementById(id);
             element.innerHTML = emissions.co2;
         });
+
+        return emissions.co2;
     }, false);
     // setInterval(() => {
     //     pageWeight = getPageWeight();
