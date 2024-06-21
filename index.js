@@ -13,7 +13,7 @@ const estimateEmissions = (pageWeight) => {
 }
 
 export default async function pageEmissionsEstimate(options = {}) {
-    const { updateId } = options;
+    const { updateId = [] } = options;
     console.log('Page emissions estimate');
     let pageWeight = 0;
 
