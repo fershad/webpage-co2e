@@ -7,8 +7,31 @@
     <script type="module">
         import pageEmissionsEstimate from './index.js';
 
-        pageEmissionsEstimate({ updateId: ['co2-emissions']});
+        window._mtm = window._mtm || [];
+        window.addEventListener("load", function() {
+        
+            const emissions = pageEmissionsEstimate();
+            console.log({emissions})
+        // Optional, update the DOM with the emissions results
+        // updateId.map((id) => {
+        //     const element = document.getElementById(id);
+        //     element.innerHTML = emissions.co2;
+        // });
+        
+        window._mtm.push({'co2': emissions});
+    }, false);
+
     </script>
+    <!-- Matomo Tag Manager -->
+<script>
+  var _mtm = window._mtm = window._mtm || [];
+  _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+  (function() {
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src='http://localhost/matomo/js/container_CxEIC7hG.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Tag Manager -->
 </head>
 <body>
     <h1>Welcome to the Demo</h1>

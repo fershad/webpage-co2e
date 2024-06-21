@@ -12,25 +12,26 @@ const estimateEmissions = (pageWeight) => {
     return emissions;
 }
 
-export default async function pageEmissionsEstimate(options = {}) {
+export default function pageEmissionsEstimate(options = {}) {
     const { updateId = [] } = options;
     console.log('Page emissions estimate');
     let pageWeight = 0;
+    pageWeight = getPageWeight();
+    const emissions = estimateEmissions(pageWeight);
 
-    window.addEventListener("load", function() {
-        pageWeight = getPageWeight();
-        console.log('Page weight:', pageWeight);
-        const emissions = estimateEmissions(pageWeight);
-        console.log('Emissions:', emissions);
+    return emissions.co2;
+    // window.addEventListener("load", function() {
+    //     console.log('Page weight:', pageWeight);
+    //     console.log('Emissions:', emissions);
 
-        // Optional, update the DOM with the emissions results
-        updateId.map((id) => {
-            const element = document.getElementById(id);
-            element.innerHTML = emissions.co2;
-        });
-
-        return emissions.co2;
-    }, false);
+    //     // Optional, update the DOM with the emissions results
+    //     updateId.map((id) => {
+    //         const element = document.getElementById(id);
+    //         element.innerHTML = emissions.co2;
+    //     });
+        
+    //     return emissions.co2;
+    // }, false);
     // setInterval(() => {
     //     pageWeight = getPageWeight();
     //     console.log('Page weight:', pageWeight);
