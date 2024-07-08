@@ -1,4 +1,4 @@
-import { co2 } from '@tgwf/co2';
+import { co2 } from './node_modules/@tgwf/co2/dist/esm/index.js';
 
 function getPageWeight() {
     const performance = window.performance.getEntriesByType('resource');
