@@ -11,18 +11,19 @@
     </script>
 </head>
 <body>
-    <h1>Welcome to the Demo</h1>
+    <h1 id="top">Welcome to the Demo</h1>
     <p>This page is a demonstration of how the <a href="https://developer.mozilla.org/en-US/docs/web/api/performanceresourcetiming">Performance Resource Timing API</a> can be used with <a href="https://github.com/thegreenwebfoundation/co2.js/tree/main">CO2.js</a> on a web page. It is a demonstration repository for the concepts outlined in the blog post <a href="https://www.fershad.com/writing/including-user-interaction-in-website-carbon-esimates"><i>Including user interaction in website carbon estimates</i></a>.</p>
     <p>This page contains three lazy-loaded images.</p>
     <p>At present, a script runs when the page is loaded. This script uses the Performance Resource Timing API to collect information about the data transferred when the pay was loaded. This information is then fed into CO2.js which uses it to provide a carbon emissions estimate based on the Sustainable Web Design Model version 4. The script also reruns each time a new image on the page is loaded by the browser. Whenever a new image loads, the resulting CO2e estimate is calculated and updated in a sticky banner on the left of the page. It also logs a trace of the estimation in the console.</p>
     <p><i>At the moment this, demonstration does not make any adjustments to grid intensity based on server location or user location, nor does it make any checks to see if the web page is hosted on a Green web host. This should be noted as changes to these variables would affect the final carbon emissions estimate produced on this page.</i></p>
 
-    <aside style="position: sticky; left: 0; top: 50%; transform: translateY(-50%) ; background-color: hotpink; padding: 1.25rem 1rem; max-width: 15rem;">
+    <aside style="position: sticky; left: 0; top: 90%; transform: translateY(-90%) ; background-color: hotpink; padding: 1.25rem 1rem; max-width: 15rem;">
         <h2>CO2 Emissions Estimate</h2>
         <p>
             <span style="font-weight: 600;"><span id="co2-emissions">Calculating...</span> grams CO2e.</span>
             Open your browsers console to see more information.
         </p>
+        <a href="#top" style="font-weight: 600; color: white; text-align: center;">Back to top</a>
     </aside>
 
     
