@@ -7,31 +7,8 @@
     <script type="module">
         import pageEmissionsEstimate from './index.js';
 
-        window._mtm = window._mtm || [];
-        window.addEventListener("load", function() {
-        
-            const emissions = pageEmissionsEstimate();
-            console.log({emissions})
-        // Optional, update the DOM with the emissions results
-        // updateId.map((id) => {
-        //     const element = document.getElementById(id);
-        //     element.innerHTML = emissions.co2;
-        // });
-        
-        window._mtm.push({'co2': emissions});
-    }, false);
-
+        pageEmissionsEstimate({ updateId: ['co2-emissions']});
     </script>
-    <!-- Matomo Tag Manager -->
-<script>
-  var _mtm = window._mtm = window._mtm || [];
-  _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
-  (function() {
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.async=true; g.src='http://localhost/matomo/js/container_CxEIC7hG.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<!-- End Matomo Tag Manager -->
 </head>
 <body>
     <h1>Welcome to the Demo</h1>
@@ -40,32 +17,28 @@
     <p>At present, a script runs when the page is loaded (window state is <code>load</code>). This script uses the Performance Resource Timing API to collect information about the data transferred when the pay was loaded. This information is then fed into CO2.js which uses it to provide a carbon emissions estimate based on the Sustainable Web Design Model version 3.</p>
     <p><i>At the moment this, demonstration does not make any adjustments to grid intensity based on server location or user location, nor does it make any checks to see if the web page is hosted on a Green web host. This should be noted as changes to these variables would affect the final carbon emissions estimate produced on this page.</i></p>
 
-    <h2>CO2 Emissions Estimate</h2>
-    <pre style="background-color: lightgray; display: flex; align-items: center; gap: 1.25rem;">
-        <code style="margin: 0;line-height: 2.25;">
-            The estimated carbon emissions for this page are: <span id="co2-emissions">Calculating...</span> grams CO2e.
+    <aside style="position: sticky; left: 0; top: 50%; background-color: hotpink; padding: 1.25rem 1rem; max-width: 15rem;">
+        <h2>CO2 Emissions Estimate</h2>
+        <p>
+            <span style="font-weight: 600;"><span id="co2-emissions">Calculating...</span> grams CO2e.</span>
             Open your browsers console to see more information.
-        </code>
-    </pre>
+        </p>
+    </aside>
 
-    <div style="height: 150vh;">
-    </div>
-
-    <h2>Local image</h2>
-    <img src="demo/mountain.jpg" alt="" width="100%">
-
-    <div style="height: 350vh;">
+    
+    <div style="height: 750vh;">
     </div>
     
-    <h2>External image</h2>
-    <img loading="lazy" src="//cdn.sanity.io/images/twtrbzfo/production/01fb918083079acdc50790dc485eea6c101bf34c-1676x1676.jpg?auto=format" alt="">
+    <img src="demo/cat.png" loading="lazy" alt="" width="100%">
     
-
-    <div style="height: 50vh;">
+    <div style="height: 750vh;">
     </div>
-
-    <h2>Youtube Embed</h2>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=Djr4akvkahZyZgmY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     
+    <img src="demo/cat.png" loading="lazy" alt="" width="100%">
+
+    <div style="height: 750vh;">
+    </div>
+    
+    <img src="demo/mountain.jpg" loading="lazy" alt="" width="100%">
 </body>
 </html>
